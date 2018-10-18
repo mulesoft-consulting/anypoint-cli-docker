@@ -1,0 +1,7 @@
+version=3.0.0
+
+image=integrational/anypoint-cli:$version
+
+docker build -t $image .
+docker push $image
+
