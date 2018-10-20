@@ -1,0 +1,10 @@
+#
+# https://github.com/integrational/anypoint-cli-docker
+# https://hub.docker.com/r/integrational/anypoint-cli
+#
+
+FROM integrational/anypoint-cli:3.0.0-cmd
+
+MAINTAINER Gerald Loeffler <gerald@integrational.eu>
+
+ENTRYPOINT [ "anypoint-cli" ]

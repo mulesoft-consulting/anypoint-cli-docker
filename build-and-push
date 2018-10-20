@@ -1,7 +1,11 @@
 version=3.0.0
 
-image=integrational/anypoint-cli:$version
+image=integrational/anypoint-cli
+imageCmd=$image:$version-cmd
+imageEp=$image:$version
 
-docker build -t $image .
-docker push $image
+docker build -f Dockerfile_cmd -t $imageCmd .
+docker push $imageCmd
 
+docker build -f Dockerfile_entrypoint -t $imageEp .
+docker push $imageEp
