@@ -9,4 +9,4 @@ MAINTAINER Gerald Loeffler <gerald@integrational.eu>
 
 RUN npm install -g anypoint-cli@3.0.0
 
-ENTRYPOINT [ "anypoint-cli" ]
+CMD [ "anypoint-cli" ]
