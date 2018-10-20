@@ -7,6 +7,7 @@ A link:Dockerfile[Docker image definition] packaging MuleSoft's https://docs.mul
 The resulting Docker image is available from https://hub.docker.com/r/integrational/anypoint-cli[Docker Hub] as `integrational/anypoint-cli`.
 
 The version of the Docker image is always that of the packaged Anypoint CLI. E.g., `integrational/anypoint-cli:3.0.0` is for Anypoint CLI `3.0.0`.
+There is always a 2nd version of the Docker image, which specifies the `anypoint-cli` executable as a `CMD` rather than as an `ENTRYPOINT`: its version appends `-cmd`, e.g., `integrational/anypoint-cli:3.0.0-cmd`.
 
 There is no `latest` Docker image.
 
@@ -57,4 +58,13 @@ Or, to execute the above CLI command against the `Staging` environment:
 [source, bash]
 ----
 anypoint-cli --environment=Staging api-mgr api list -o json
+----
+
+=== Usage of the `-cmd` version
+
+To run a shell in the container that allows you to executes several `anypoint-cli` commands in succession:
+
+[source, bash]
+----
+docker run --rm -it integrational/anypoint-cli:3.0.0-cmd bash
 ----
